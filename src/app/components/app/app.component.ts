@@ -1,5 +1,4 @@
 import {Component} from '@angular/core';
-import {NavService} from "../../shared/nav.service";
 
 @Component({
   selector: 'app-root',
@@ -8,5 +7,21 @@ import {NavService} from "../../shared/nav.service";
 })
 export class AppComponent {
 
-  constructor(private menuService: NavService){}
+  navLinks: NavLink[] = [
+    {path: "/me", label: "Me"},
+    {path: "/friends", label: "Friends"},
+    {path: "/todos", label: "Todos"},
+    {path: "/organizer", label: "Organizer"},
+  ];
+
+  activeLink = this.navLinks[0];
+
+  constructor() {
+  }
+
+}
+
+interface NavLink {
+  path: string,
+  label: string
 }
