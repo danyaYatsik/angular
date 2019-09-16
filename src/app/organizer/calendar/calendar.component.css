@@ -1,0 +1,33 @@
+
+table {
+  width: 100%;
+  font-size: 1.5em;
+}
+
+th {
+  padding: 1em 0;
+}
+
+td {
+  text-align: center;
+  padding: 1em 0;
+  cursor: pointer;
+}
+
+td:hover {
+  background-color: #eee;
+}
+
+.disabled {
+  opacity: .3;
+}
+
+.selected {
+  color: #3f51b5;
+  font-weight: bolder;
+}
+
+.active {
+  color: #ff4081;
+  font-weight: bolder;
+}

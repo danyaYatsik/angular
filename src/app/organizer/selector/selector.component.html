@@ -1,0 +1,11 @@
+<div class="centered">
+    <button mat-icon-button (click)="go(-1)">
+      <i class="material-icons orange600">arrow_back_ios</i>
+    </button>
+
+    <span>{{momentService.date | async | moment}}</span>
+
+    <button mat-icon-button (click)="go(1)">
+      <i class="material-icons orange600">arrow_forward_ios</i>
+    </button>
+</div>

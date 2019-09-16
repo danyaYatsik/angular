@@ -1,0 +1,14 @@
+<div class="container">
+  <h2>Are you {{name}}?</h2>
+  <mat-form-field
+    *ngIf="firmVisible">
+    <input matInput
+           type="text" placeholder="Name"
+           [(ngModel)]="name">
+  </mat-form-field>
+  <button mat-raised-button
+          type="submit"
+          [color]="buttonStyle"
+          (click)="onButtonClicked()"
+  >{{buttonText}}</button>
+</div>

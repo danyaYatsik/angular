@@ -1,0 +1,20 @@
+<h2>Todos</h2>
+
+<mat-form-field>
+  <input matInput type="text" placeholder="Filter by title" [(ngModel)]="searchString">
+</mat-form-field>
+<br>
+
+<mat-nav-list *ngIf="!isLoading; else loading">
+  <mat-list-item *ngFor="let todo of todosService.todos | todosFilter:searchString"
+                 [class.completed]="todo.completed"
+                 (click)="itemClicked(todo.id)">
+    <span>{{todo.id}}.</span>
+    <span>{{todo.title}}</span>
+  </mat-list-item>
+</mat-nav-list>
+
+<ng-template #loading>
+  <h2>LOADING...</h2>
+</ng-template>
+

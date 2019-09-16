@@ -1,0 +1,38 @@
+<section>
+
+  <header>
+    <h2>Organizer: <strong>{{momentService.date | async | moment:"DD.MM.YYYY"}}</strong></h2>
+    <hr/>
+  </header>
+
+  <main>
+    <mat-list *ngIf="tasks.length; else noTasks">
+      <mat-list-item *ngFor="let task of tasks; let id = index">
+        <span>{{id + 1}}.</span>
+        <span>{{task.value}}</span>
+        <span>{{task.date}}</span>
+        <button mat-icon-button (click)="remove(task)">
+          <i class="material-icons orange600">highlight_off</i>
+        </button>
+      </mat-list-item>
+    </mat-list>
+
+    <ng-template #noTasks>
+      <h4>No tasks yet...</h4>
+      <br>
+    </ng-template>
+    <br>
+  </main>
+
+  <footer>
+
+    <form [formGroup]="form" (ngSubmit)="submit()">
+      <mat-form-field>
+        <input matInput type="text" placeholder="Add new task...">
+      </mat-form-field>
+
+      <button mat-raised-button [disabled]="form.invalid" type="submit">Add</button>
+    </form>
+  </footer>
+
+</section>
